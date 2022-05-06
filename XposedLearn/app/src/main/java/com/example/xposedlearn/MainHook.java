@@ -42,7 +42,7 @@ public class MainHook implements IXposedHookLoadPackage {
                         methodHook = new replaceMethod();
 
                         Class<?> clazzNotificationManager = XposedHelpers.findClass(
-                                "android.app.NotificationManagerCompat", classLoader);
+                                "android.app.NotificationManager", classLoader);
                         XposedHelpers.findAndHookMethod(clazzNotificationManager, "notify",
                                 String.class, int.class, Notification.class, methodHook);
 
